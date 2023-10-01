@@ -1,0 +1,59 @@
+info = {'name':'Karan', 'age':19, 'eligible':True}
+
+Accessing Dictionary items:
+print(info['name'])
+
+
+Accessing multiple values:
+print(info.values())
+=>
+dict_values(['Karan', 19, True])
+
+
+Accessing keys:
+print(info.keys())
+=>dict_keys(['name', 'age', 'eligible'])
+
+
+Accessing key-value pairs:
+print(info.items())
+=>dict_items([('name', 'Karan'), ('age', 19), ('eligible', True)])
+
+
+
+
+
+Methods:
+
+update(): 
+to add or change
+info = {'name':'Karan', 'age':19, 'eligible':True}]
+info.update({'age':20})
+info.update({'DOB':2001})]
+=>
+{'name': 'Karan', 'age': 19, 'eligible': True}
+{'name': 'Karan', 'age': 20, 'eligible': True, 'DOB': 2001}
+
+
+clear():
+The clear() method removes all the items from the list.
+ex:
+info.clear()
+
+
+pop():
+The pop() method removes the key-value pair whose key is passed as a parameter.
+info.pop('eligible')
+
+
+popitem():
+The popitem() method removes the last key-value pair from the dictionary.
+ex:
+info.popitem()
+
+
+del:
+we can also use the del keyword to remove a dictionary item.
+ex:
+del info['age']
+

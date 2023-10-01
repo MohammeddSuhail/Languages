@@ -1,0 +1,58 @@
+note: When imported that module will be executed
+
+import math
+result = math.sqrt(9)
+
+
+from math import sqrt
+result = sqrt(9)
+
+
+from math import sqrt, pi
+
+
+from math import *
+
+
+import math as m
+
+
+
+
+
+The dir function:
+Finally, Python has a built-in function called dir that you can use to view the names of all the functions and variables defined in a module. This can be helpful for exploring and understanding the contents of a new module.
+
+import math
+print(dir(math))
+
+
+
+
+
+
+
+
+__name__:
+ __name__ variable is a built-in variable that is automatically set to the name of the current module. 
+When a Python script is run directly, the __name__ variable is set to the string __main__ 
+When the script is imported as a module into another script, the __name__ variable is set to the name of the module.
+
+
+ex:
+def func():
+    print("Running script directly")
+if __name__ == "__main__":
+    func()
+
+execute the function only if it is directly run.
+
+
+ex:
+def main():
+    print("Running script directly")
+if __name__ == "__main__":
+    main()
+
+
+

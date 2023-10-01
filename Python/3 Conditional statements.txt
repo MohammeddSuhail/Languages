@@ -1,0 +1,99 @@
+if condition:
+    # code to execute if condition is true
+
+
+
+
+
+
+if condition:
+    # code to execute if condition is true
+else:
+    # code to execute if condition is false
+
+
+
+
+
+
+
+if condition1:
+    # code to execute if condition1 is true
+elif condition2:
+    # code to execute if condition1 is false and condition2 is true
+elif condition3:
+    # code to execute if condition1 and condition2 are false, and condition3 is true
+else:
+    # code to execute if all conditions are false
+
+
+
+
+
+
+
+match case: it's like switch
+x = int(input("Enter the value of x: "))
+# x is the variable to match
+match x:
+    # if x is 0
+    case 0:
+        print("x is zero")
+    # case with if-condition
+    case 4:
+        print("case is 4")
+
+    case _ if x!=90:
+        print(x, "is not 90")
+    case _ if x!=80:
+        print(x, "is not 80")
+    case _:
+        print(x)
+
+
+
+
+
+
+
+if else in One Line:
+
+ex:
+result = value1 if condition else value2
+This syntax is equivalent to the following if-else statement:
+if condition:
+    result = value1
+else:
+    result = value2
+
+
+ex:
+print("A") if a > b else print("B")
+
+
+ex:
+a = 330
+b = 331
+print("A") if a > b else print("same") if a == b else print("B")
+
+same as:
+if a>b:
+    print("A")
+elif a==b:
+        print("same")
+else:
+    print("B")
+
+
+
+
+
+
+ex:
+string = "hello, world"
+char = "w"
+
+if char in string:
+    print("The string contains the character", char)
+else:
+    print("The string does not contain the character", char)

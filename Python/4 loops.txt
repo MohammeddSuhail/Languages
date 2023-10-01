@@ -1,0 +1,55 @@
+for loop:
+
+name = 'Abhishek'
+for i in name:
+    print(i, end=", ")
+
+
+for k in range(4,9):
+    print(k)
+
+
+Else with for Loop:
+for x in range(5):
+    print (f"iteration no {x} in for loop")
+else:
+    //this part executed when the loop is executed successfully, if we have used "break" then this won't be executed 
+    print ("else block in loop")
+
+
+
+
+
+
+while loop:
+
+count = 5
+while (count > 0):
+  print(count)
+  count = count - 1
+
+
+
+
+Else with While Loop:
+
+x = 5
+while (x > 0):
+    print(x)
+    x = x - 1
+else:
+    print('counter is 0')
+
+
+
+
+
+
+
+Do-While loop in python:
+
+while True:
+  number = int(input("Enter a positive number: "))
+  print(number)
+  if not number > 0:
+    break

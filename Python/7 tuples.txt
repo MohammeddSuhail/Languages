@@ -1,0 +1,29 @@
+Tuples are immutable lists.
+ex:
+details = ("Abhijeet", 18, "FYBScIT", 9.8)
+
+
+It is sliced same as lists.
+
+
+
+Coverting tuple to list:
+list_name = list(tuple_name)
+
+
+concatenation:
+ex:
+countries = ("Pakistan", "Afghanistan", "Bangladesh", "ShriLanka")
+countries2 = ("Vietnam", "India", "China")
+southEastAsia = countries + countries2
+
+
+
+methods:
+
+tuple.count(element)
+
+tuple.index(element, start, end)
+
+
+

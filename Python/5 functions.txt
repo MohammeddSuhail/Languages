@@ -1,0 +1,53 @@
+def function_name(parameters):
+  # Code and Statements
+
+
+def function_name(parameters):
+  pass #can be used to not do anything
+
+
+
+
+Default arguments:
+def name(fname, mname = "Jhon", lname = "Whatson"):
+    print("Hello,", fname, mname, lname)
+name("Amy")
+
+
+
+Keyword arguments:
+def name(fname, mname, lname):
+    print("Hello,", fname, mname, lname)
+name(mname = "Peter", lname = "Wesker", fname = "Jade")
+
+
+
+
+Variable-length arguments:
+Sometimes we may need to pass more arguments than those defined in the actual function. This can be done using variable-length arguments.
+
+There are two ways to achieve this:
+
+1. Arbitrary Arguments:
+def name(*name):
+    print("Hello,", name[0], name[1], name[2])
+name("James", "Buchanan", "Barnes")
+
+
+2. Keyword Arbitrary Arguments:
+def name(**name):
+    print("Hello,", name["fname"], name["mname"], name["lname"])
+name(mname = "Buchanan", lname = "Barnes", fname = "James")
+
+
+
+
+
+
+
+return Statement
+The return statement is used to return the value of the expression back to the calling function.
+ex:
+def name(fname, mname, lname):
+    return "Hello, " + fname + " " + mname + " " + lname
+print(name("James", "Buchanan", "Barnes"))

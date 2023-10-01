@@ -1,0 +1,28 @@
+This is a type of list that
+=>unique element(can't have duplicates)
+=>unordered
+=>unchangble
+uses curly brackets.
+
+ex:
+s = {2, 4, 2, 6}
+print(s)
+=> {2, 4, 6}
+
+ex:
+info = {"Carla", 19, False, 5.9, 19}
+print(info)
+=>
+{False, 19, 5.9, 'Carla'}
+
+
+
+
+methods:
+links:
+
+https://www.w3schools.com/python/python_ref_set.asp
+
+https://replit.com/@codewithharry/32-Day32-Set-Methods#.tutorial/01%20joining%20sets.md
+
+https://replit.com/@codewithharry/32-Day32-Set-Methods#.tutorial/02%20set%20methods.md

@@ -1,0 +1,16 @@
+marks = [12, 56, 32, 98, 12,  45, 1, 4]
+
+//indexing from 0
+for index, mark in enumerate(marks):
+  if(index == 3):
+    print("Suhail, awesome!")
+  else:
+      print("Suhail, Cool")
+
+
+//indexing from 1
+for index, mark in enumerate(marks, start=1):
+  if(index == 3):
+    print("Suhail, awesome!")
+  else:
+      print("Suhail, Cool")

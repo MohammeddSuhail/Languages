@@ -1,0 +1,68 @@
+import os
+import shutil
+
+#gets the current working directory
+print(os.getcwd())
+
+#checks if "data" directory exists in the current directory, if not it creates using mkdir
+if(not os.path.exists("data")):
+    os.mkdir("data")
+    
+#checks if data/some1,....,data/some10 directory exists in the current directory, if not it creates using mkdir
+for i in range(10):
+    if(not os.path.exists(f"data/some{i+1}")):
+        os.mkdir(f"data/some{i+1}")
+        
+#renaming data/some1,...,data/some10 to data.something1,...,data.something10
+for i in range(10):
+    if(os.path.exists(f"data/some{i+1}")):
+        os.rename(f"data/some{i+1}",f"data/something{i+1}")
+
+#lists everything in the current directory, it returns a list
+items = os.listdir()
+print(items)
+
+#checks if the item is directory, if yes it lists all files/directories in that directory
+#else it checks if it is file, if yes then it prints that "It's just a file"
+for item in items:
+    if os.path.isdir(item):
+        print(os.listdir(item))
+    elif os.path.isfile(item):
+        print(item, ": It's just a file")
+
+#executing a linux command
+print(os.system("ls"))
+
+#for changing the current working directory to "data"
+os.chdir("data")
+print(os.getcwd())
+
+
+parent = os.getcwd()
+directory = "something1"
+#for joining paths
+path = os.path.join(parent, directory)
+
+#for removing the directory specified in path, if the directory is empty
+os.rmdir(path)
+
+#deleting a nin-empty directory
+# import shutil
+#   shutil.rmtree("directory_name")
+
+
+# Creates a new file called file1.txt
+with open('file1.txt', 'w') as fp:
+    pass
+    # To write data to new file uncomment
+    # this fp.write("New file created")
+
+#deletes a file called file1.txt
+os.remove('file1.txt')
+
+#moving back a directory
+os.chdir("..")
+print(os.getcwd())
+
+#deleting non-empty directory called "data"using shutil.rmtree
+shutil.rmtree("data")

@@ -1,0 +1,5 @@
+a=input("Enter the name: ")
+variable=int(input())
+c=float(input())
+
+

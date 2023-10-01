@@ -1,0 +1,175 @@
+details = ["Abhijeet", 18, "FYBScIT", 9.8]
+print(details)
+print(details[3])
+
+
+Negative Indexing:
+colors = ["Red", "Green", "Blue", "Yellow", "Green"]
+           [-5]    [-4]    [-3]     [-2]      [-1]
+
+
+
+
+
+
+Check whether an item in present in the list:
+ex:
+colors = ["Red", "Green", "Blue", "Yellow", "Green"]
+if "Yellow" in colors:
+    print("Yellow is present.")
+else:
+    print("Yellow is absent.")
+
+
+
+
+
+
+
+slicing:
+listName[start : end : jumpIndex]
+ex:
+animals = ["cat", "dog", "bat", "mouse", "pig", "horse", "donkey", "goat", "cow"]
+print(animals[4:])          //4th to end
+print(animals[:6])          //start to 5th 
+print(animals[::2])	    //Printing alternate values =>['cat', 'bat', 'pig', 'donkey', 'cow']
+print(animals[-8:-1:2])     //Printing alternate values =>['cat', 'bat', 'pig', 'donkey', 'cow']
+
+
+
+
+
+
+
+
+
+List Comprehension:
+List comprehensions are used for creating new lists from other iterables like lists, tuples, dictionaries, sets, and even in arrays and strings.
+
+Syntax:
+List = [Expression(i.e,item) for item in iterable if Condition]
+
+Expression: It is the item which will be taken as list item.
+Iterable: It can be list, tuples, dictionaries, sets, and even in arrays and strings.
+Condition: Condition checks if the item should be added to the new list or not.
+
+
+ex:
+lst = [i for i in range(4)]
+=>[0,1,2,3]
+
+
+ex:
+names = ["Milo", "Sarah", "Bruno", "Anastasia", "Rosa"]
+namesWith_O = [item for item in names if "o" in item]
+print(namesWith_O)
+=>
+['Milo', 'Bruno', 'Rosa']
+
+
+ex:
+names = ["Milo", "Sarah", "Bruno", "Anastasia", "Rosa"]
+namesWith_O = [item for item in names if len(item)>4)]
+print(namesWith_O)
+=>
+['Sarah', 'Bruno', 'Anastasia']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Methods:
+
+list.sort():
+This method sorts the list in ascending order. The original list is updated
+=>list_name.sort()
+
+reverse sort:
+list_name..sort(reverse=True)
+
+
+
+reverse():
+This method reverses the order of the list.
+Example:
+num = [4,2,5,3,6,1,2,1,2,8,9,7]
+num.reverse()
+
+
+
+index():
+print(list_name..index("something"))
+
+
+
+
+count():
+Returns the count of the number of items with the given value.
+print(list_name.count("something"))
+
+
+
+
+copy()
+Returns copy of the list. This can be done to perform operations on the list without modifying the original list.
+Example:
+colors = ["voilet", "green", "indigo", "blue"]
+newlist = colors.copy()
+
+
+
+
+append():
+This method appends items to the end of the existing list.
+Example:
+colors = ["voilet", "indigo", "blue"]
+colors.append("green")
+
+
+
+
+insert():
+This method inserts an item at the given index. User has to specify index and the item to be inserted within the insert() method.
+
+Example:
+colors = ["voilet", "indigo", "blue"]
+#           [0]        [1]      [2]
+colors.insert(1, "green")   #inserts item at index 1
+# updated list: colors = ["voilet", "green", "indigo", "blue"]
+#       indexs              [0]       [1]       [2]      [3]
+
+
+
+
+extend():
+This method adds an entire list or any other collection datatype (set, tuple, dictionary) to the existing list.
+Example 1:
+#add a list to a list
+colors = ["voilet", "indigo", "blue"]
+rainbow = ["green", "yellow", "orange", "red"]
+colors.extend(rainbow)
+=>
+['voilet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']
+
+
+
+
+
+Concatenating two lists:
+You can simply concatenate two lists to join two lists.
+Example:
+colors = ["voilet", "indigo", "blue", "green"]
+colors2 = ["yellow", "orange", "red"]
+print(colors + colors2)
+
+Output:
+['voilet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']

@@ -1,0 +1,9 @@
+Docstrings: 
+Are just the secription of how to use the function, method, class, or module.
+They are in the first line of the function, method, class, or module.
+ex:
+def square(n):
+    '''Takes in a number n, returns the square of n'''
+    print(n**2)
+square(5)
+print(square.__doc__) #will print that Docstring of square function
