@@ -80,3 +80,10 @@ print(os.getcwd())
 
 #deleting non-empty directory called "data"using shutil.rmtree
 shutil.rmtree("data")
+
+
+
+#The os.path.dirname() function returns the directory path of the given file path.
+file_location= "\\outputs\\new\\fil1.so"
+dir_path = os.path.dirname(file_location) 
+# This will give "\\outputs\\new\\"
