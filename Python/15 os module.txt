@@ -18,7 +18,9 @@ print(os.getcwd())
 
 #checks if "data" directory exists in the current directory, if not it creates using mkdir
 if(not os.path.exists("data")):
-    os.mkdir("data")
+    os.mkdir("data")  #It creates a single directory with the specified path. If the intermediate directories do not exist in the path, it throws an exception
+    
+#os.makedirs("path") : It can create multiple intermediate directories if they do not exist in the given path
     
 #checks if data/some1,....,data/some10 directory exists in the current directory, if not it creates using mkdir
 for i in range(10):
