@@ -1,6 +1,18 @@
 import os
 import shutil
 
+print("************")
+for root, dirs, files in os.walk("C:\\Users\\something\\Desktop\\Courses"):
+    print("**************************************************")
+    print("current root: ")
+    print(root) # Current directory being traversed
+    print("current sub-dirs: ")
+    print(dirs) # Subdirectories in the current directory 
+    print("current files: ")
+    print(files) # Files in the current directory
+    print("**************************************************")
+print("********************")
+
 #gets the current working directory
 print(os.getcwd())
 
@@ -31,7 +43,7 @@ for item in items:
         print(item, ": It's just a file")
 
 #executing a linux command
-print(os.system("ls"))
+os.system("ls")
 
 #for changing the current working directory to "data"
 os.chdir("data")
