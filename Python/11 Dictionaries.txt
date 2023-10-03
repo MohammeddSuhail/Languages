@@ -35,6 +35,31 @@ info.update({'DOB':2001})]
 {'name': 'Karan', 'age': 20, 'eligible': True, 'DOB': 2001}
 
 
+customer = {
+ "name": "John Smith"
+}
+#adding new key-value pair to dictionary
+customer["something"]={"a":"b","c":"d"}
+customer["some"]={"ad"}
+=>
+name  :  John Smith
+age  :  30
+is_verified  :  True
+something  :  {'a': 'b', 'c': 'd'}
+some  :  {'ad'}
+
+updating:
+customer["something"]={"a":"b","c":"d"}
+customer["some"]={"ad"}
+customer["some"]={"cd"}
+=>
+name  :  John Smith
+age  :  30
+is_verified  :  True
+something  :  {'a': 'b', 'c': 'd'}
+some  :  {'cd'}
+
+
 clear():
 The clear() method removes all the items from the list.
 ex:
