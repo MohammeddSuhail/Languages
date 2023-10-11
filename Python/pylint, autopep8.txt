@@ -1,0 +1,15 @@
+pylint filename.py
+says what mistakes were there
+
+
+autopep8 filename.py
+
+inplace:
+autopep8 -i filename.py
+
+difference:
+autopep8 -d filename.py
+
+
+aggressive modifications:
+autopep8 --aggressive filename.py
