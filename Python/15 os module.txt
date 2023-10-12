@@ -87,3 +87,9 @@ shutil.rmtree("data")
 file_location= "\\outputs\\new\\fil1.so"
 dir_path = os.path.dirname(file_location) 
 # This will give "\\outputs\\new\\"
+
+
+#To get basename from a full path
+source_file = "/home/user/documents/file.txt"
+basename = os.path.basename(source_file)
+print(basename)   # Prints "file.txt"
