@@ -82,3 +82,12 @@ we can also use the del keyword to remove a dictionary item.
 ex:
 del info['age']
 
+
+
+
+vars = {}
+for i in range(3):
+    vars[f"var {i}"] = i
+print(vars)
+
+=> {'var 0': 0, 'var 1': 1, 'var 2': 2}
