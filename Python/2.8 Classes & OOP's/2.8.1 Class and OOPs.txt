@@ -1,0 +1,89 @@
+class Person:
+  name = "Harry"
+  occupation = "Software Developer"
+  networth = 10
+
+  def info(self):
+    print(f"{self.name} is a {self.occupation}")
+
+
+a = Person()
+b = Person()
+
+a.name = "Shubham"
+a.occupation = "Accountant"
+
+b.name = "Nitika"
+b.occupation = "HR"
+
+print(a.name, a.occupation)
+a.info()
+b.info()
+
+
+
+
+
+
+
+
+Constructor( __init__ method):
+
+class Person:
+
+  def __init__(self, name, occ):
+    print("Hey I am a person")
+    self.name = name
+    self.occ = occ
+
+  def info(self):
+    print(f"{self.name} is a {self.occ}")
+
+
+a = Person("Harry", "Developer")
+b = Person("Divya", "HR") 
+a.info()
+b.info()
+
+
+
+
+
+
+
+
+
+
+
+
+Getters and Setters:
+
+These are functions that are sort of treated like properties.
+
+
+class MyClass:
+  def __init__(self, value):
+      self._value = value
+    
+  def show(self):
+    print(f"Value is {self._value}")
+    
+  @property
+  def ten_value(self):
+      return 10* self._value
+    
+  @ten_value.setter
+  def ten_value(self, new_value):
+      self._value = new_value/10
+
+obj = MyClass(10)
+obj.ten_value = 67
+print(obj.ten_value)
+obj.show()
+
+=>
+100
+67.0
+Value is 6.7
+
+

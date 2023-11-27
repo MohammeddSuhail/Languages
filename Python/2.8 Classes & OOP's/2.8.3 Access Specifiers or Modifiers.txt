@@ -1,0 +1,16 @@
+Public:
+All the variables and methods (member functions) in python are by default public. 
+Any instance variable in a class followed by the ‘self’ keyword ie. self.var_name are public accessed.
+
+
+
+
+Private(__varname): can still be accessed indirectly.
+In Python, there is no strict concept of "private" access modifiers like in some other programming languages. 
+However, a convention has been established to indicate that a variable or method should be considered private by prefixing its name with a double underscore (__).
+
+
+
+
+Protected: Just a convention
+In Python, the convention for indicating that a member is protected is to prefix its name with a single underscore (_). 
