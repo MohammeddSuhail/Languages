@@ -1,0 +1,247 @@
+Default values in function:
+Note that those default values are only initialized once.
+ex: 
+def some_func(l=[]):
+    some_body
+
+Here l will be initialized only once not again and again when it is called
+
+
+
+
+
+subprocess.call():
+runs a subprocess and waits for it to finish. It is part of the subprocess module in the Python standard library.
+
+It allows you to run system commands or executables from within your Python script.
+
+The basic usage is:
+  import subprocess
+
+  subprocess.call(["command", "arg1", "arg2", ...])
+
+ex:
+  subprocess.call(["ls", "-l"])
+  # Runs the "ls -l" command, which lists files in long format
+ex:
+can be
+subprocess.call(["python3", "arg1(can be path to the python tool)", "arg2", "arg3", "arg4"])
+
+
+ex:
+import subprocess
+p1 = subprocess.run(['ls', '-la'], capture_output=True)
+print(p1. stdout.decode ())
+
+
+ex:
+output = subprocess.check_output(f"find {search_path} -name {dir_name}*", shell=True).decode('utf-8')
+return output.splitlines()
+
+
+
+
+
+
+
+
+os.popen():
+Runs an OS command from Python.
+ex:
+valid_output = os.popen(f"find {valid_results_path} -name {dir}*").read()
+
+
+
+
+
+
+Iterators:
+They can be only used once
+
+
+
+
+
+
+glob module:
+
+The glob module allows you to list filenames matching a specified pattern.
+glob.glob() - To find pathnames matching a specified pattern.
+ex:
+  import glob
+
+  pyfiles = glob.glob("*.py")
+  print(pyfiles)
+
+
+
+
+
+sys module:
+
+sys.argv[0] - Contains the name of the Python script.
+sys.argv[1] - Contains the first command line argument passed to the script.
+sys.argv[2] - Contains the second command line argument and so on.
+
+ex:
+python script.py arg1 arg2 arg3
+
+sys.argv[0] will be 'script.py'
+sys.argv[1] will be 'arg1'
+sys.argv[2] will be 'arg2'
+sys.argv[3] will be 'arg3
+
+
+
+
+
+
+difflib module:
+The difflib module in Python is used for comparing sequences, especially text. It can be used to compare strings, lists, files etc.
+
+
+
+
+
+
+re module:
+The re.search() function is used to match a regex pattern within a string.
+
+ex:
+  import re
+  text = "The quick brown fox jumps over the lazy dog."
+  match = re.search("fox", text)
+  print(match.group()) # fox
+
+
+
+
+
+
+
+
+
+
+Threading: 
+for IO bounded tasks, not for CPU bounded tasks
+Here cuncurency can achieved when like one process is sort of waiting for something then other is run on cpu.
+
+
+old way,
+import threading
+
+new way,
+import concurrent.futures
+
+with concurrent.futures.ThreadPoolExecutor() as executor:
+  secs = [5, 4, 3, 2, 1]
+  results = [executor.submit (do_something, sec) for sec in secs]
+  for f in concurrent.futures.as_completed (results) :
+    print (f.result ())
+
+or
+
+with concurrent. futures. ThreadPoolExecutor () as executor:
+  secs = [5, 4, 3, 2, 1]
+  results = executor.map (do_something, secs)
+  for result in results:
+    print (result)
+
+ex: while downloading mutiple pictures from online
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+enumerate:
+
+for index, name in enumerate (names, start=1):
+  print (index, name)
+
+
+
+
+
+
+Zip:
+
+for name, hero in zip (names, heroes):
+  print (f'{name} is actually {hero}')
+
+
+
+
+
+
+Unpacking:
+
+a, b = (1,2)
+
+a, _ = (1,2)
+
+a, b, *c = (1, 2, 3, 4, 5)
+=>
+1
+2
+[3, 4, 5]
+
+
+a, b, *_ = (1, 2, 3, 4, 5)
+
+
+a, b, *c, d = (1, 2, 3, 4, 5, 6, 7)
+=>
+1
+2
+[3, 4, 5, 6]
+7
+
+
+
+
+
+
+
+
+
+
+
+setattr
+getattr
+
+=>
+
+class Person() :
+  pass
+
+person = Person ()
+person_info = {'first': 'Corey', 'last': 'Schafer'}
+
+for key, value in person_info.items():
+  setattr (person, key, value)
+
+print (person.first)
+print (person. Last)
+
+for key in person_info.keys):
+  print (getattr (person, key))
+
+
