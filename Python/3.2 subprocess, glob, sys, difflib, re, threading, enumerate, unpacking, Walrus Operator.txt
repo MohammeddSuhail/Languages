@@ -245,3 +245,18 @@ for key in person_info.keys):
   print (getattr (person, key))
 
 
+
+
+
+
+
+
+
+
+
+Walrus Operator:
+The Walrus Operator is a new addition to Python 3.8 and allows you to assign a value to a variable within an expression.
+
+numbers = [1, 2, 3, 4, 5]
+while (n := len(numbers)) > 0:
+    print(numbers.pop())
