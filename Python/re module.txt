@@ -1,0 +1,11 @@
+import re
+str = """
+Multi-line string
+"""
+
+pattern = re.compile(r'some_regex_pattern', re.MULTILINE)
+
+matches = pattern.findall(str)
+
+for match in matches:
+    print(match)
