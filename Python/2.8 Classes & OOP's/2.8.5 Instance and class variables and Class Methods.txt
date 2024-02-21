@@ -28,6 +28,7 @@ obj2.print_name() # Output: Jane
 Class Variables:
 Class variables are defined at the class level and are shared among all instances of the class. 
 They are defined outside of any method and are usually used to store information that is common to all instances of the class.
+To modify class variables. If you use normal methods to do this, it will create a new instance variable instead of modifying the class variable.
 
 ex:
 
@@ -73,7 +74,5 @@ class ExampleClass:
 
 e1 = ExampleClass.def factory_method(arg1, arg2)
 
-other example: 
-To modify class variables. If you use normal methods to do this, it will create a new instance variable instead of modifying the class variable.
 
   
