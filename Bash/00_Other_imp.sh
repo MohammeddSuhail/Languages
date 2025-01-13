@@ -19,13 +19,13 @@ exit 1 # Any non-zero exit status means failure, but the specific number indicat
 
 3. script calling another Script
 
-# if shell type is same
+a. if shell type is same
 ./01_read.sh
 
-# if shell type is different between caling script and called script, then
-# # specify the correct interpreter for the called script
-# <called_script_type> <script_name>
-# ex: sh/ksh script_name
+b. if shell type is different between caling script and called script, then
+   specify the correct interpreter for the called script
+<called_script_type> <script_name>
+ex: sh/ksh script_name
 
 
 
