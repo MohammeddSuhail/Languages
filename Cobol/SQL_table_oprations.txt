@@ -1,0 +1,135 @@
+SQL table oprations:
+
+1️⃣ Database Setup (Create the Table)
+Before interacting with the database, you must create the required table.
+
+sql
+Copy code
+CREATE TABLE STUDENT (
+    STUDENT_ID      INT PRIMARY KEY,
+    STUDENT_NAME    VARCHAR(25),
+    STUDENT_ADDRESS VARCHAR(50)
+);
+
+🔎 Explanation:
+STUDENT_ID: Unique student identifier.
+STUDENT_NAME: Student's name.
+STUDENT_ADDRESS: Student's address.
+
+
+
+2️⃣ COBOL Program Structure for Read/Write
+🔵 Copybook (STUDENT.cpy)
+Defines the structure to map COBOL variables to the database.
+
+01 STUDENT-RECORD.
+   05 STUDENT-ID      PIC 9(4).
+   05 STUDENT-NAME    PIC X(25).
+   05 STUDENT-ADDRESS PIC X(50).
+
+
+
+
+🔵 COBOL Program
+
+IDENTIFICATION DIVISION.
+PROGRAM-ID. STUDENT-PROGRAM.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+
+* SQL Communication Area
+EXEC SQL INCLUDE SQLCA END-EXEC.
+
+* Include Copybook for Student Record
+EXEC SQL INCLUDE STUDENT END-EXEC.
+
+* Host Variables for Data Operations
+EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+   01 WS-STUDENT-ID      PIC 9(4).
+   01 WS-STUDENT-NAME    PIC X(25).
+   01 WS-STUDENT-ADDRESS PIC X(50).
+EXEC SQL END DECLARE SECTION END-EXEC.
+
+PROCEDURE DIVISION.
+
+* Step 1: Connect to the Database
+   EXEC SQL
+      CONNECT TO 'YourDatabaseName' USER 'YourUsername' USING 'YourPassword'
+   END-EXEC.
+   
+   IF SQLCODE NOT = 0
+      DISPLAY 'Database Connection Failed' SQLCODE
+      STOP RUN
+   END-IF.
+
+* Step 2: Insert Data into the Table
+   MOVE 1001 TO WS-STUDENT-ID.
+   MOVE 'Alice Johnson' TO WS-STUDENT-NAME.
+   MOVE '123 Elm Street' TO WS-STUDENT-ADDRESS.
+
+   EXEC SQL
+      INSERT INTO STUDENT (STUDENT_ID, STUDENT_NAME, STUDENT_ADDRESS)
+      VALUES (:WS-STUDENT-ID, :WS-STUDENT-NAME, :WS-STUDENT-ADDRESS)
+   END-EXEC.
+
+   IF SQLCODE = 0
+      DISPLAY 'Record Inserted Successfully'
+   ELSE
+      DISPLAY 'Error Inserting Record' SQLCODE
+   END-IF.
+
+* Step 3: Read Data from the Table
+   MOVE 1001 TO WS-STUDENT-ID.
+
+   EXEC SQL
+      SELECT STUDENT_NAME, STUDENT_ADDRESS
+      INTO :WS-STUDENT-NAME, :WS-STUDENT-ADDRESS
+      FROM STUDENT
+      WHERE STUDENT_ID = :WS-STUDENT-ID
+   END-EXEC.
+
+   IF SQLCODE = 0
+      DISPLAY 'Student Name: ' WS-STUDENT-NAME
+      DISPLAY 'Student Address: ' WS-STUDENT-ADDRESS
+   ELSE
+      DISPLAY 'Record Not Found or Error' SQLCODE
+   END-IF.
+
+* Step 4: Disconnect from the Database
+   EXEC SQL
+      DISCONNECT
+   END-EXEC.
+
+   DISPLAY 'Disconnected from Database'.
+   STOP RUN.
+
+
+Database Connection:
+EXEC SQL
+   CONNECT TO 'YourDatabaseName' USER 'YourUsername' USING 'YourPassword'
+END-EXEC.
+Connects to the database.
+SQLCODE checks if the connection was successful.
+
+Insert Data:
+EXEC SQL
+   INSERT INTO STUDENT (STUDENT_ID, STUDENT_NAME, STUDENT_ADDRESS)
+   VALUES (:WS-STUDENT-ID, :WS-STUDENT-NAME, :WS-STUDENT-ADDRESS)
+END-EXEC.
+Inserts a student record into the STUDENT table.
+
+Read Data:
+EXEC SQL
+   SELECT STUDENT_NAME, STUDENT_ADDRESS
+   INTO :WS-STUDENT-NAME, :WS-STUDENT-ADDRESS
+   FROM STUDENT
+   WHERE STUDENT_ID = :WS-STUDENT-ID
+END-EXEC.
+Reads a student's name and address using the STUDENT_ID.
+
+Disconnect:
+EXEC SQL
+   DISCONNECT
+END-EXEC.
+Safely disconnects from the database.

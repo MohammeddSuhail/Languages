@@ -1,0 +1,84 @@
+Reading a Sequential File:
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. READ-STUDENT-FILE.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD STUDENT-FILE.
+       01 STUDENT-RECORD.
+          05 STUDENT-ID        PIC 9(3).
+          05 STUDENT-NAME      PIC X(20).
+          05 STUDENT-MARKS     PIC 99.
+
+       WORKING-STORAGE SECTION.
+       01 WS-END-OF-FILE     PIC X VALUE 'N'.
+
+       PROCEDURE DIVISION.
+       
+       OPEN INPUT STUDENT-FILE.
+       
+       PERFORM READ-RECORD UNTIL WS-END-OF-FILE = 'Y'.
+       
+       CLOSE STUDENT-FILE.
+       
+       STOP RUN.
+
+       READ-RECORD.
+           READ STUDENT-FILE INTO STUDENT-RECORD
+              AT END
+                 MOVE 'Y' TO WS-END-OF-FILE
+              NOT AT END
+                 DISPLAY 'Student ID: ' STUDENT-ID
+                 DISPLAY 'Student Name: ' STUDENT-NAME
+                 DISPLAY 'Marks: ' STUDENT-MARKS
+           END-READ.
+
+
+
+
+
+
+
+
+
+PROGRAM STRUCTURE TO WRITE TO THE FILE:
+
+IDENTIFICATION DIVISION.
+PROGRAM-ID. WRITEFILE.
+
+ENVIRONMENT DIVISION.
+INPUT-OUTPUT SECTION.
+FILE-CONTROL.
+    SELECT FILEN ASSIGN TO 'STUDENT.DAT'
+           ORGANIZATION IS LINE SEQUENTIAL.
+
+DATA DIVISION.
+FILE SECTION.
+FD  FILEN.
+01  NAME  PIC A(25).
+
+WORKING-STORAGE SECTION.
+01  WS-NAME  PIC A(25).
+01  WS-EOF   PIC A(1) VALUE 'N'.  *> Flag to control the loop
+
+PROCEDURE DIVISION.
+MAIN-PARA.
+    OPEN OUTPUT FILEN         *> Step 1: Open file for writing
+
+    PERFORM UNTIL WS-EOF = 'Y'
+        DISPLAY 'Enter Name (Type END to finish):'
+        ACCEPT WS-NAME         *> Step 2: Accept user input
+
+        IF WS-NAME = 'END'     *> Step 3: Check for termination condition
+            MOVE 'Y' TO WS-EOF
+        ELSE
+            MOVE WS-NAME TO NAME  *> Step 4: Move data to file record
+            WRITE NAME            *> Step 5: Write the record to file
+        END-IF
+    END-PERFORM
+
+    CLOSE FILEN              *> Step 6: Close the file
+
+    DISPLAY 'File write completed.'
+    STOP RUN.

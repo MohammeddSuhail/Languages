@@ -1,0 +1,40 @@
+Divisions: https://www.tutorialspoint.com/cobol/cobol_program_structure.htm
+
+There are 80 character positions on each line: https://www.tutorialspoint.com/cobol/cobol_basic_syntax.htm
+
+Level Number: https://www.tutorialspoint.com/cobol/cobol_data_types.htm
+
+
+Verbs:
+ACCEPT
+DISPLAY
+MOVE
+ADD
+SUBTRACT
+MULTIPLY
+DIVIDE
+COMPUTE
+
+
+Conditional Statements: https://www.tutorialspoint.com/cobol/cobol_condition_statements.htm
+
+Loop: https://tutorialspoint.com/cobol/cobol_loop_statements.htm
+
+Arrays in COBOL are known as tables: https://www.tutorialspoint.com/cobol/cobol_table_processing.htm
+
+File: https://www.tutorialspoint.com/cobol/cobol_file_handling.htm
+File Organization: https://www.tutorialspoint.com/cobol/cobol_file_organization.htm
+File Handling Verbs: https://www.tutorialspoint.com/cobol/cobol_file_handling_verbs.htm
+
+Calling programs: https://www.tutorialspoint.com/cobol/cobol_subroutines.htm
+
+Database Interface: https://www.tutorialspoint.com/cobol/cobol_database_interface.htm
+
+
+copybook for any piece of code. Can be used tostore record structure or anything.
+COPY 'STUDENT-COPYBOOK'.
+
+generally for a file,
+1. assign file path to a variable: ENVIRONMENT DIVISION. -> FILE-CONTROL.
+2. explain it's record structore in DATA DIVISION. -> FILE SECTION.
+3. then use
