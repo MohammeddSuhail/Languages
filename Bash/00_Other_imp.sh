@@ -4,8 +4,8 @@
 current_date=$(date)
 echo "Current date and time: $current_date"
 
-USERS=`ls | grep Array`
-echo "Lsit operation: $USERS"
+Listing=`ls | grep Array`
+echo "List operation: $Listing"
 
 
 
