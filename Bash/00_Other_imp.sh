@@ -1,7 +1,5 @@
 #!/bin/sh
 
-
-
 1. Storing the output of a shell command in a variable
 current_date=$(date)
 echo "Current date and time: $current_date"
