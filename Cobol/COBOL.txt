@@ -31,7 +31,7 @@ Calling programs: https://www.tutorialspoint.com/cobol/cobol_subroutines.htm
 Database Interface: https://www.tutorialspoint.com/cobol/cobol_database_interface.htm
 
 
-copybook for any piece of code. Can be used tostore record structure or anything.
+copybook for any piece of code. Can be used to store record structure or anything.
 COPY 'STUDENT-COPYBOOK'.
 
 generally for a file,
