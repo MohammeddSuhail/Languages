@@ -1,0 +1,6 @@
+1.
+date passes theoutput to stdin not stout so below won't exactly work.
+
+date | echo "date is"
+output:
+date is
