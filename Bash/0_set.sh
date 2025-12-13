@@ -29,7 +29,10 @@ set -e
 
 
 3.
-set -o
+set -o pipefail
 # set -e won't work if they is failure in pipe command , beacue it'll check the authenticity of last command not all cmd in pipe,
 # so need to use this command
 
+
+all 3 in one:
+set -exo pipefail
