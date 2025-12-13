@@ -25,6 +25,9 @@ b. if shell type is different between caling script and called script, then
 <called_script_type> <script_name>
 ex: sh/ksh script_name
 
+calling just few commands:
+bash -c 'commands'
+
 
 
 
