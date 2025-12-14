@@ -1,0 +1,47 @@
+jq: JSON Processor
+jq is a lightweight and flexible command-line JSON processor. It is like sed or awk for JSON data.
+
+ex 1:
+data.json file:
+{
+  "name": "Project Alpha",
+  "version": "1.0",
+  "users": [
+    {"id": 1, "status": "active"},
+    {"id": 2, "status": "inactive"},
+    {"id": 3, "status": "active"}
+  ]
+}
+
+Read a top-level value:	jq '.name' data.json	
+=>"Project Alpha"
+
+Read a nested value:	jq '.users[0].status' data.json	
+=> "active"
+
+ex 2:
+curl api.com/data | jq '.'
+
+
+
+
+
+yq: YAML Processor
+yq (often the mikefarah/yq implementation written in Go) is designed to process YAML documents but also supports JSON, XML, and more. It uses a filtering syntax very similar to jq.
+
+ex:
+config.yaml file:
+config:
+  host: localhost
+  port: 8080
+services:
+  - name: web-app
+    enabled: true
+  - name: db-service
+    enabled: false
+
+
+Read a nested value:	yq '.config.port' config.yaml	
+=>8080
+Update value (in-place):	yq -i '.config.port = 8081' config.yaml	
+=>File config.yaml is modified.
